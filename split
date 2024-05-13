@@ -1,21 +1,52 @@
 using System;
 
-namespace SplitWords 
+namespace SplitWords
 {
-    class Program 
+    class Program
     {
-        static void Main(string[] args) 
+        static void Main(string[] args)
         {
-            string sentence = "";
+            Console.WriteLine("Введите предложение: ");
 
-            foreach (var a in sentence.Split(' ')) 
-            {
-                sentence = Console.ReadLine();
-                Console.WriteLine(a);
-            }
-            
-            Console.Read();
+            string sentence = Console.ReadLine();
 
+
+            string[] words = SplitText(sentence);
+            string[] split2 = SplitText2(sentence);
+
+            printWords(words);
+
+
+            Console.ReadLine();
         }
+
+        static string[] SplitText(string text)
+        {
+            return text.Split(' ');
+        }
+
+        static void printWords(string[] words)
+        {
+            Console.WriteLine("Слова в предложении");
+
+            foreach (var word in words)
+            {
+                Console.WriteLine(word);
+            }
+        }
+
+        static string[] SplitText2(string text)  
+        {
+            string[] split2 = text.Split(' ');
+            string newText = ReverseWord(split2);
+            return newText;
+        }
+        static string ReverseWord(string[] text)  
+        {
+            Array.Reverse(text);
+            string str = string.Join(" ", text);
+            return str;
+        }
+
     }
 }
