@@ -35,13 +35,13 @@ namespace SplitWords
             }
         }
 
-        static string[] SplitText2(string text)  
+        static string[] SplitText2(string text)
         {
             string[] split2 = text.Split(' ');
             string newText = ReverseWord(split2);
             return newText;
         }
-        static string ReverseWord(string[] text)  
+        static string ReverseWord(string[] text)
         {
             Array.Reverse(text);
             string str = string.Join(" ", text);
