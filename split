@@ -39,7 +39,7 @@ namespace SplitWords
         {
             string[] split2 = text.Split(' ');
             string newText = ReverseWord(split2);
-            return newText;
+            return newText[];
         }
         static string ReverseWord(string[] text)
         {
